@@ -48,4 +48,29 @@ def _getfinedetails():
     records = cursor.fetchall()
     for row in records:
         print(row)
-_getfinedetails()
+#_getfinedetails()
+
+def add_user(user,password):
+    query=("insert into user values(%s,%s)")
+    row=(user,password)
+    cursor.execute(query,row)
+    conn.commit()
+    print(user,"New User Added Successfully...!")
+#add_user('Ruchita','Ruchita@2000')
+
+#Adding Student
+def add_new_student(studentid,fname,mname,lname,courseid,semester,percentage):
+    query=("insert into student values(%s,%s,%s,%s,%s,%s,%s)")
+    row =(studentid,fname,mname,lname,courseid,semester,percentage)
+    cursor.execute(query,row)
+    conn.commit()
+    print("New Student Details Added Successfully...!")
+#(11,'Ruchita','Santosh','Bhandari','ugcse',5,80.0)
+
+#Updating Student
+#def update_student():
+ #   query=("update student set semester=2  where semester=3")
+  #  cursor.execute(query)
+   # conn.commit()
+    #print("Details Updated Successfully.!")
+#def update_student()
